@@ -13,6 +13,8 @@ def process_file(root,file):
     if im is None:
         return
     os.remove(name)
+    if name.endswith('_color.png') == True:
+        return
     ext = os.path.splitext(name)[1]
     name = name.replace(ext,'_color.png')
     cv2.imwrite(name,im)
